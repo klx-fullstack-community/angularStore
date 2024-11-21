@@ -5,7 +5,9 @@
   "projects": {
     "ktech": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "style": "scss"
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

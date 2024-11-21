@@ -1,0 +1,41 @@
+.app-content {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-rows: 0.3fr 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.nav {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-top: 2rem;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-right: 1rem;
+  }
+}
+
+.menu {
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  ul > li {
+    list-style-type: none;
+    text-decoration: underline;
+    margin: 1rem 0.5rem;
+  }
+}
+
+.content {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

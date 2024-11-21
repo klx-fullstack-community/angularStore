@@ -1,0 +1,18 @@
+<div class="app-content">
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/logo.png">
+      <h1>KTECH STORE</h1>
+    </div>
+    <div class="menu">
+      <ul>
+        <li *ngFor="let item of menuList">
+          <span (click)="show(item.link)">{{item.title}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <app-product-card *ngFor="let prod of itemList" [product]="prod"></app-product-card>
+  </div>
+</div>
