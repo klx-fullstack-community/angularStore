@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit{
     }
   ];
   selectedMenu = 'home';
+  showCart = false;
 
   itemList: Product[] = [];
 
@@ -44,5 +45,9 @@ export class HomeComponent implements OnInit{
 
   show(item: string) {
     this.selectedMenu = item;
+  }
+
+  toggleCart() {
+    this.showCart = !this.showCart;
   }
 }

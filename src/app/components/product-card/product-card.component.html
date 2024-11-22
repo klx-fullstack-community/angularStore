@@ -1,18 +1,21 @@
 <div class="card">
   <div class="card-header">
-    <p class="card-title">{{product?.discount ? product?.discount + ' % off' : ''}}</p>
+    <p class="card-title">{{ product?.discount ? product?.discount + ' % off' : '' }}</p>
     <span class="material-symbols-outlined" [ngClass]="{'selected': product?.favorite}" (click)="toggleFav(product)">favorite</span>
   </div>
   <div class="card-body">
     <img [src]="product?.imageUrl">
   </div>
   <div class="card-footer">
-    <p class="card-title">{{product?.name}}</p>
-    <p class="card-description">{{product?.description}}</p>
-    <p class="card-price" *ngIf="product?.discount === 0">${{product?.price}}</p>
-    <p class="card-price" *ngIf="product?.discount !== 0">
-      <span class="old-price">${{product?.price}}</span>
-      <span class="discount">-{{product.discount}}%</span>
-      <span class="selected">${{getPrice(product)}}</span></p>
+    <p class="card-title">{{ product?.name }}</p>
+    <p class="card-description">{{ product?.description }}</p>
+    <div class="action-section">
+      <p class="card-price" *ngIf="product?.discount === 0">${{ product?.price }}</p>
+      <p class="card-price" *ngIf="product?.discount !== 0">
+        <span class="old-price">${{ product?.price }}</span>
+        <span class="discount">-{{ product?.discount }}%</span>
+        <span class="selected">${{ getPrice(product) }}</span></p>
+      <span class="material-symbols-outlined cart" (click)="addToCart(product)">shopping_bag</span>
+    </div>
   </div>
 </div>

@@ -29,6 +29,7 @@
     list-style-type: none;
     text-decoration: underline;
     margin: 1rem 0.5rem;
+    cursor: pointer;
   }
 }
 
@@ -38,4 +39,22 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.cart-btn {
+  position: sticky;
+  top: 3rem;
+  left: 95%;
+  border: 3px solid goldenrod;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  &:hover {
+    background-color: goldenrod;
+    color: white;
+  }
 }

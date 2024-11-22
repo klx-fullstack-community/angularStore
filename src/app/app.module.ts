@@ -8,12 +8,14 @@ import {AppRoutingModule} from "./app-routing.module";
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import {ProductService} from "./services/product.service";
 import {HttpClientModule} from "@angular/common/http";
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

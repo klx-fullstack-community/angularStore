@@ -15,4 +15,10 @@
   <div class="content">
     <app-product-card *ngFor="let prod of itemList" [product]="prod"></app-product-card>
   </div>
+
+  <div class="cart-btn" (click)="toggleCart()">
+    <span class="material-symbols-outlined">shopping_bag</span>
+  </div>
+  <app-cart *ngIf="showCart"></app-cart>
+
 </div>
