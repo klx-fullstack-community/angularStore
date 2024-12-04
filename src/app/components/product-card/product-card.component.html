@@ -4,14 +4,14 @@
     <span class="material-symbols-outlined" [ngClass]="{'selected': product?.favorite}" (click)="toggleFav(product)">favorite</span>
   </div>
   <div class="card-body">
-    <img [src]="product?.imageUrl">
+    <img [src]="product?.imageBase64">
   </div>
   <div class="card-footer">
     <p class="card-title">{{ product?.name }}</p>
     <p class="card-description">{{ product?.description }}</p>
     <div class="action-section">
-      <p class="card-price" *ngIf="product?.discount === 0">${{ product?.price }}</p>
-      <p class="card-price" *ngIf="product?.discount !== 0">
+      <p class="card-price" *ngIf="product?.discount === 0 || product?.discount === null">${{ product?.price }}</p>
+      <p class="card-price" *ngIf="product?.discount !== 0 && product?.discount !== null">
         <span class="old-price">${{ product?.price }}</span>
         <span class="discount">-{{ product?.discount }}%</span>
         <span class="selected">${{ getPrice(product) }}</span></p>

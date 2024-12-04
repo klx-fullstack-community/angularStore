@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.model";
 import {ProductService} from "../../services/product.service";
 
@@ -9,15 +9,19 @@ import {ProductService} from "../../services/product.service";
 })
 export class ProductCardComponent {
   @Input() product: Product = {};
+  @Output() addCart: EventEmitter<Product> = new EventEmitter<Product>;
+  @Output() addFav: EventEmitter<Product> = new EventEmitter<Product>;
+  
 
   constructor(private protectedService: ProductService) {
   }
 
   toggleFav(product: Product) {
+    product.favorite = !product.favorite;
     if(product.favorite) {
-      this.protectedService.removeFromFavorites(product);
+      this.addFav.emit(product);
     } else {
-      this.protectedService.addToFavorites(product);
+      this.addFav.emit(product);
     }
   }
 
@@ -26,10 +30,6 @@ export class ProductCardComponent {
   }
 
   addToCart(product: Product) {
-    this.protectedService.addToCart(product);
-  }
-
-  setFavourite(product: Product) {
-    this.protectedService.addToFavorites(product);
+    this.addCart.emit(product);
   }
 }

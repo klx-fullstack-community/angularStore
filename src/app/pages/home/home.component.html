@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="content">
-    <app-product-card *ngFor="let prod of itemList" [product]="prod"></app-product-card>
+    <app-product-card *ngFor="let prod of itemList" [product]="prod" (addCart)="addToCart($event)" (addFav)="updateProduct($event)"></app-product-card>
   </div>
 
   <div class="cart-btn" (click)="toggleCart()">
