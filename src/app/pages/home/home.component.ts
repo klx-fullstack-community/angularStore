@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Product} from "../../models/product.model";
 import {ProductService} from "../../services/product.service";
 import { Subject } from 'rxjs';
@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit{
   ];
   selectedMenu = 'home';
   showCart = false;
+  update = false;
 
   itemList: Product[] = [];
 
@@ -60,8 +61,12 @@ export class HomeComponent implements OnInit{
   addToCart(product: Product) {
     const productToAdd = {...product};
     productToAdd.imageBase64 = product.imageBase64?.split(', ')[1];
-    this.productService.addToCart(productToAdd).subscribe();
+    this.productService.addToCart(productToAdd).subscribe(() => {
+      this.update = true;
+    });
+    this.update = false;
   }
+
   updateProduct(event: Product) {
     this.itemList.find(p => p.id === event.id)!.favorite = event.favorite!;
   }

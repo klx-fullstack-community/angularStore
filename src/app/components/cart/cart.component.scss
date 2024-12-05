@@ -8,10 +8,25 @@
   position: fixed;
   top: 8rem;
   right: 1rem;
-  width: 14rem;
+  width: 18rem;
 }
 
 .cart-item {
   display: flex;
-  justify-content: space-around;
+  margin: 10px 0 10px 0;
+  justify-content: space-between;
+  p, span {
+    margin: 0 5px 0 0; 
+  }
+  
+}
+
+.title {
+  margin: 0 0 5px 0; 
+}
+
+.material-symbols-outlined {
+  margin: 0 0 0 5px;
+  font-size: 12px; 
+  cursor: pointer;
 }
